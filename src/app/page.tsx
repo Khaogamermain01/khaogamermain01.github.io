@@ -1,113 +1,139 @@
-import Image from 'next/image'
+import Navbar from "@/components/Navbar";
+import Link from "next/link";
+import {
+  FaDiscord,
+  FaRegEnvelope,
+  FaLocationDot,
+} from "react-icons/fa6";
 
-export default function Home() {
+const Page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Navbar />
+      <div className="p-12 space-x-12 bg-base-100 flex">
+        <div className="card w-1/4 bg-neutral text-neutral-content h-full">
+          <div className="card-body items-center text-center">
+            <div className="avatar">
+              <div className="w-24 rounded">
+                <img src="https://cdn.discordapp.com/avatars/624819246177845270/a09ace2678b80d74faaa7d9957f88c68.png?size=2048" />
+              </div>
+            </div>
+            <h2 className="card-title">Khao C.</h2>
+            <div className="badge badge-lg">Full-Stack Developer</div>
+            <div className="divider my-2" />
+            <div className="space-y-1 text-start">
+              <button className="btn btn-ghost join-item no-animation normal-case w-fit">
+                <div className="btn no-animation"><FaRegEnvelope /></div>
+                <h1 className="text-lg">khao@khaodoes.dev</h1>
+              </button>
+              <button className="btn btn-ghost join-item no-animation normal-case w-fit">
+                <div className="btn no-animation"><FaDiscord /></div>
+                <h1 className="text-lg">@Khao_YT</h1>
+              </button>
+              <button className="btn btn-ghost join-item no-animation normal-case w-fit">
+                <div className="btn no-animation"><FaLocationDot /></div>
+                <h1 className="text-lg">Nakhon Pathom, Thailand</h1>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="card w-3/4 bg-neutral text-neutral-content">
+          <div className="card-body">
+            <h2 className="card-title text-3xl">Resume</h2>
+            <div className="divider w-2/12 my-2" />
+            <div className="space-y-6">
+              <p>
+                I'm Khao, a Full Stack Developer from Nakhon Pathom, Thailand. My journey in web development has led me to explore a wide range of technologies, such as Node.js and JavaScript. I also enjoy creating Minecraft plugins and mods, Discord bots, and crafting React websites along with traditional HTML sites.
+              </p>
+              <p>
+                With experience in MongoDB, MySQL, and MariaDB, I can handle databases. I'm currently focused on the hosting industry, constantly learning and adapting to new challenges. My portfolio showcases the projects that define my journey in the world of web development. 
+              </p>
+            </div>
+            <h2 className="font-bold py-2 text-3xl">What I'm doing</h2>
+            <div className="flex flex-wrap">
+              <div className="w-1/2 p-4">
+                <div className="card card-side card-compact shadow-lg bg-base-200 rounded-lg p-2">
+                  <figure><div className="avatar">
+                    <div className="w-28 rounded-xl">
+                      <img src="/Minecraft.png" />
+                    </div>
+                  </div></figure>
+                  <div className="card-body">
+                    <h2 className="card-title">Minecraft Plugins & Mods</h2>
+                    <p>I create Minecraft plugins and mods using Java<br />and Kotlin with Gradle and Maven.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-1/2 p-4">
+                <div className="card card-side card-compact shadow-lg bg-base-200 rounded-lg p-2">
+                  <figure><div className="avatar">
+                    <div className="w-28 rounded-xl">
+                      <img src="/Pterodactyl.png" />
+                    </div>
+                  </div></figure>
+                  <div className="card-body">
+                    <h2 className="card-title">Pterodactyl Setup</h2>
+                    <p>I can setup a Pterodactyl Panel<br />in less than 25 minutes.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-1/2 p-4">
+                <div className="card card-side card-compact shadow-lg bg-base-200 rounded-lg p-2">
+                  <figure><div className="avatar">
+                    <div className="w-28 rounded-xl">
+                      <img src="/ReactJS.webp" />
+                    </div>
+                  </div></figure>
+                  <div className="card-body">
+                    <h2 className="card-title">React Websites</h2>
+                    <p>I do web design and I make websites<br />in React with help of TailwindCSS.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-1/2 p-4">
+                <div className="card card-side card-compact shadow-lg bg-base-200 rounded-lg p-2">
+                  <figure><div className="avatar">
+                    <div className="w-28 h-28 rounded overflow-hidden">
+                      <img src="/Discord.png" alt="Discord" className="object-cover h-full w-full" />
+                    </div>
+                  </div></figure>
+                  <div className="card-body">
+                    <h2 className="card-title">Making of Discord Bots</h2>
+                    <p>I also use Discord.JS to make custom Discord Bots.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 className="font-bold py-2 text-3xl">Clients</h2>
+            <div className="carousel carousel-center h-36 bg-neutral rounded-box space-x-4">
+              <div className="carousel-item">
+                <img src="/clients/DriftHosting.png" className="rounded-box transition-opacity duration-1000 ease-out opacity-50 hover:opacity-100" />
+              </div> 
+              <div className="carousel-item">
+                <img src="/clients/WepwawetHosting.png" className="rounded-box transition-opacity duration-1000 ease-out opacity-50 hover:opacity-100" />
+              </div> 
+              <div className="carousel-item">
+                <img src="/clients/WepwawetSMP.png" className="rounded-box transition-opacity duration-1000 ease-out opacity-50 hover:opacity-100" />
+              </div> 
+              <div className="carousel-item">
+                <img src="/clients/FonxFam.png" className="rounded-box transition-opacity duration-1000 ease-out opacity-50 hover:opacity-100" />
+              </div> 
+              <div className="carousel-item">
+                <img src="/clients/FireMM.png" className="rounded-box transition-opacity duration-1000 ease-out opacity-50 hover:opacity-100" />
+              </div> 
+              <div className="carousel-item">
+                <img src="/clients/DragonHuntersSMP.png" className="rounded-box transition-opacity duration-1000 ease-out opacity-50 hover:opacity-100" />
+              </div> 
+            </div>
+            <div className="divider my-0" />
+          </div>
         </div>
       </div>
+    </>
+  );
+};
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Page;
